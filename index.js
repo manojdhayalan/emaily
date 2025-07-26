@@ -28,8 +28,9 @@ if (process.env.NODE_ENV === 'production') {
   // Serve static files from the React app
   app.use(express.static('client/build'));
   // Handle React routing, return all requests to React app
+  const path = require('path');
   app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/client/build/static/index.html');
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   }
   );
 }
