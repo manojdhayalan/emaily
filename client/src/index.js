@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from "redux";
 import reduxThunk from "redux-thunk";
-import App from './Components/App';
+import App from './components/App';
+import reducers from './reducers';
 
-const store = createStore(() => [], {}, applyMiddleware(reduxThunk));
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 const el = document.getElementById("root");
 
